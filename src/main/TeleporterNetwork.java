@@ -32,7 +32,7 @@ public class TeleporterNetwork extends Mod{
 
         TeleBlocks.loadCont();
 
-        Log.info("Loaded teleporters in" + Time.timeSinceMillis(time) + " seconds");
+        Log.info("Loaded teleporters in " + Time.timeSinceMillis(time) + "ms");
     }
 
 }

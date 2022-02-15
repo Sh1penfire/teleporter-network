@@ -3,8 +3,10 @@ package main;
 import arc.*;
 import arc.util.*;
 import main.content.TeleBlocks;
+import main.world.blocks.TeleporterGraph;
 import mindustry.*;
 import mindustry.content.*;
+import mindustry.core.GameState.State;
 import mindustry.game.EventType.*;
 import mindustry.gen.*;
 import mindustry.mod.*;
@@ -15,6 +17,12 @@ public class TeleporterNetwork extends Mod{
         Events.on(ContentInitEvent.class, e -> {
             UI.init();
         });
+
+        Events.on(StateChangeEvent.class, e -> {
+            if(e.from == State.menu && e.to == State.playing){
+                TeleporterGraph.setup();
+            }
+        });
     }
 
     @Override
@@ -24,7 +32,7 @@ public class TeleporterNetwork extends Mod{
 
         TeleBlocks.loadCont();
 
-        Log.info("Loaded teleporters in {0} seconds", Time.timeSinceMillis(time));
+        Log.info(Strings.format("Loaded teleporters in {0} seconds", Time.timeSinceMillis(time)));
     }
 
 }

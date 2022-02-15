@@ -19,7 +19,10 @@ public class TeleporterGraph {
     //sets up the graph for the current session
     public static void setup(){
 
-        Seq seq = Seq.with("string", 8, null);
+        Seq seq = Seq.with("string", 8, null, 1, 6, 5, "l", "llll");
+
+        seq.addAll(seq);
+        seq.addAll(seq);
 
         Iterator iterable = seq.iterator();
 

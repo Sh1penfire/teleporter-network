@@ -4,4 +4,8 @@ import mindustry.world.Block;
 
 public class TeleBlocks {
     public static Block smallTele, largeTele, teleBlocker, sandboxTele, itemsTele;
+
+    public static void loadCont(){
+
+    }
 }

@@ -11,9 +11,10 @@ import mindustry.mod.*;
 import mindustry.ui.dialogs.*;
 
 public class TeleporterNetwork extends Mod{
-
     public TeleporterNetwork(){
-
+        Events.on(ContentInitEvent.class, e -> {
+            UI.init();
+        });
     }
 
     @Override
